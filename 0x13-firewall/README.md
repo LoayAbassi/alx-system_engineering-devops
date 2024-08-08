@@ -22,3 +22,6 @@ ufw delete [number] // deletes a permission based on rule number from above
 
 # assuring saved things
 sudo service ufw restart // don't type restart it'll show u options
+
+all rules should be defined in /etc/ufw/before.rule 
+before any default rules (*filter)
