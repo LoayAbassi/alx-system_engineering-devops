@@ -19,3 +19,6 @@ ufw status [numbered] // lists all ports infos
 numbered is optional , but gives number of a specific rule for after usage
 
 ufw delete [number] // deletes a permission based on rule number from above
+
+# assuring saved things
+sudo service ufw restart // don't type restart it'll show u options
