@@ -1,0 +1,7 @@
+# SSH Config File
+# connects to server without password
+Host web-01
+	Hostname 54.235.165.150
+	User ubuntu
+	PasswordAuthentication no
+	IdentityFile ~/.ssh/school
