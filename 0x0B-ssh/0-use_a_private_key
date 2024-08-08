@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+# Allows connecting to server using ubuntu's private key
+ssh -i ~/.ssh/id_rsa ubuntu@54.235.165.150
