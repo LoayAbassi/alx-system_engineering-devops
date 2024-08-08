@@ -20,9 +20,17 @@ ssh-keygen // generates a key
 
 PS: A have a list of authorized keys 
 
-ssh userName@ip //connection to server
+ssh userName@serverHost //connection to server
 ls .ssh // lists ssh files 
 cat .ssh/authorized_keys // shows keys accepted by server
 
 to add a new authorized key : 
 echo <code> >> .ssh/authorized_keys
+
+ssh-copy-id user@server // copies public SSH key to remote server’s authorized_keys file, allowing you to log in without a password.
+
+scp file user@host:/path # copies files securly to server
+
+nslookup domainName // returns ipadress 
+
+-v to run in debug mode
