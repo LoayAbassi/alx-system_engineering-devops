@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 """
-exports data to csv 
+exports data to csv
 """
 
 if __name__ == "__main__":
