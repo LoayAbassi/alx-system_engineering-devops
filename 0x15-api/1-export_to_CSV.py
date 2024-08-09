@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 """
-returns infos about employee's todo list
+exports data to csv 
 """
 
 if __name__ == "__main__":
