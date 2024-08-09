@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 """
-returns infos about employee's todo list    
+returns infos about employee's todo list
 """
 
 if __name__ == "__main__":
@@ -24,7 +24,7 @@ if __name__ == "__main__":
                 completed += 1
                 Ncompleted.append(task["title"])
 
-    print("Employee {} is done with tasks({}/{}):".format(user, completed, total))
+    print(f"Employee {user} is done with tasks({completed}/{total}):")
 
     for title in Ncompleted:
         print("\t {}".format(title))
