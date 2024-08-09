@@ -4,6 +4,7 @@ exports data to json
 """
 
 if __name__ == "__main__":
+    import json
     import requests
     import sys
     url = "https://jsonplaceholder.typicode.com/"
@@ -12,10 +13,8 @@ if __name__ == "__main__":
     user = requests.get(url+"users/"+str(userID))
     user = user.json()["name"]
 
-    completed = 0
-    total = 0
-    Ncompleted = []
     # retreiving employee's todo list
+    
     tasks = requests.get(url+"todos/")
     for task in tasks.json():
         if task["userId"] == int(userID):
