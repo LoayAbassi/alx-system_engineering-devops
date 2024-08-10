@@ -1,0 +1,600 @@
+<!DOCTYPE html>
+<!-- saved from url=(0043)https://intranet.alxswe.com/concepts/100002 -->
+<html lang="en" coupert-item="9AF8D9A4E502F3784AD24272D81F0381"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="description" content="">
+    <meta name="google" content="notranslate">
+
+      <script type="text/javascript" async="" src="./a_files/cody-widget.js.téléchargement"></script><script async="" src="./a_files/gtm.js.téléchargement"></script><script>
+    window.dataLayer = window.dataLayer || [];
+    dataLayer.push({"userId":525718,"visitorType":"student","batch":{"id":158,"fullNameWithC":"AFR-1123 (C#22)","schoolLocation":{"id":1,"name":"ALX Africa"}},"curriculum":{"id":1,"name":"SE Foundations"}});
+
+    window.gtm_user_custom_event = function (name, options) {
+      if (typeof name === 'undefined') {
+        return;
+      }
+
+      window.dataLayer.push({
+        customEventOptions: typeof options !== 'undefined' ? options : {},
+        event: name,
+      });
+    }
+  </script>
+
+  <!-- Google Tag Manager -->
+  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+  })(window,document,'script','dataLayer','GTM-N4C8MF2');</script>
+  <!-- End Google Tag Manager -->
+
+
+    <title>Concept: [How to : ] Fresh Reset and Install mysql 5.7 | ALX Africa Intranet</title>
+
+      <link rel="stylesheet" href="./a_files/xgz4ilr.css">
+      <link rel="stylesheet" media="all" href="./a_files/application_alx-1f6cfefd6ab6e8e6ee892ddd3e5427e239e097c86a629c5dacaade7c4c492931.css">
+      <script src="./a_files/loader.js.téléchargement"></script>
+      <script src="./a_files/application-06e9a3ffafcb03d34c31475ffbd87ceb2261f0ec62464b93f7a96394b398ffa9.js.téléchargement"></script>
+      <link rel="shortcut icon" type="image/x-icon" href="https://intranet.alxswe.com/favicon_alx.ico">
+      <meta name="csrf-param" content="authenticity_token">
+<meta name="csrf-token" content="pjrPZmEBUqm7ASxdXpD2UukKoeLsHawWHc6s3Xkig00y3sQoUT0kkZR2eZCxJHgoY5SP5to2RLxFGc01SZgSiw">
+
+      <link rel="apple-touch-icon" href="https://intranet.alxswe.com/apple-touch-icon_alx.png">
+
+      <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+      <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+        <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+      <![endif]-->
+
+      <!-- Store user timezone -->
+      <script>
+        Cookies.set('timezone', (new Date()).getTimezoneOffset() / -60.0);
+      </script>
+
+      <!-- intro.js for interactive onboarding -->
+
+      <!-- React -->
+      <script src="./a_files/application-c0e26d60a9eed470b3af.js.téléchargement"></script>
+      <link rel="stylesheet" media="screen" href="./a_files/application-87456da7.css">
+  </head>
+
+  <body class="signed_in env_production notranslate" translate="no" data-theme-suffix="_alx">
+      <!-- Google Tag Manager (noscript) -->
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-N4C8MF2"
+  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+  <!-- End Google Tag Manager (noscript) -->
+
+
+      <nav class="navbar navbar-default navbar-fixed-top topbar visible-xs">
+  <div class="navbar-header">
+    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-mobile" aria-expanded="false">
+      <span class="sr-only">Toggle navigation</span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+    </button>
+
+    <a class="navbar-brand" href="https://intranet.alxswe.com/">
+      <div class="logo"></div>
+</a>  </div>
+
+  <div class="collapse navbar-collapse navigation" id="navbar-mobile">
+    <ul class="nav navbar-nav">
+      <li data-container="body" data-placement="right" data-toggle="tooltip" title="" data-original-title="Home"><a href="https://intranet.alxswe.com/"><div class="icon "><i aria-hidden="true" class="fa-solid fa-home "></i></div><div class="visible-xs">Home</div></a></li>
+
+
+
+
+    <li data-container="body" data-placement="right" data-toggle="tooltip" title="" data-original-title="My Planning"><a href="https://intranet.alxswe.com/planning/me"><div class="icon "><i aria-hidden="true" class="fa-solid fa-calendar "></i></div><div class="visible-xs">My Planning</div></a></li>
+    <li data-container="body" data-placement="right" data-toggle="tooltip" id="sidebar-current-projects-item" title="" data-original-title="Projects"><a href="https://intranet.alxswe.com/projects/current"><div class="icon "><i aria-hidden="true" class="fa-solid fa-code-fork "></i></div><div class="visible-xs">Projects</div></a></li>
+    <li data-container="body" data-placement="right" data-toggle="tooltip" title="" data-original-title="QA Reviews I can make"><a href="https://intranet.alxswe.com/corrections/to_review"><div class="icon "><i aria-hidden="true" class="fa-solid fa-check "></i></div><div class="visible-xs">QA Reviews I can make</div></a></li>
+    
+    <li data-container="body" data-placement="right" data-toggle="tooltip" title="" data-original-title="Evaluation quizzes"><a href="https://intranet.alxswe.com/dashboards/my_current_evaluation_quizzes"><div class="icon "><i aria-hidden="true" class="fa-solid fa-question "></i></div><div class="visible-xs">Evaluation quizzes</div></a></li>
+
+    <hr title="My resources">
+
+    <li data-container="body" data-placement="right" data-toggle="tooltip" title="" data-original-title="Curriculums"><a href="https://intranet.alxswe.com/dashboards/my_curriculums"><div class="icon "><i aria-hidden="true" class="fa-solid fa-graduation-cap "></i></div><div class="visible-xs">Curriculums</div></a></li>
+    <li data-container="body" data-placement="right" data-toggle="tooltip" id="sidebar-concepts-item" title="" data-original-title="Concepts"><a href="https://intranet.alxswe.com/concepts"><div class="icon "><i aria-hidden="true" class="fa-solid fa-file-text "></i></div><div class="visible-xs">Concepts</div></a></li>
+    <li data-container="body" data-placement="right" data-toggle="tooltip" id="sidebar-dashboards-video-rooms" title="" data-original-title="Conference rooms"><a href="https://intranet.alxswe.com/dashboards/video_rooms"><div class="icon "><i aria-hidden="true" class="fa-solid fa-comments "></i></div><div class="visible-xs">Conference rooms</div></a></li>
+    <li data-container="body" data-placement="right" data-toggle="tooltip" title="" data-original-title="Servers"><a href="https://intranet.alxswe.com/servers"><div class="icon "><i aria-hidden="true" class="fa-solid fa-server "></i></div><div class="visible-xs">Servers</div></a></li>
+    <li data-container="body" data-placement="right" data-toggle="tooltip" id="sidebar-dashboards-my-containers" title="" data-original-title="Sandboxes"><a href="https://intranet.alxswe.com/user_containers/current"><div class="icon "><i aria-hidden="true" class="fa-solid fa-terminal "></i></div><div class="visible-xs">Sandboxes</div></a></li>
+    <li data-container="body" data-placement="right" data-toggle="tooltip" title="" data-original-title="Tools"><a href="https://intranet.alxswe.com/dashboards/my_tools"><div class="icon "><i aria-hidden="true" class="fa-solid fa-wrench "></i></div><div class="visible-xs">Tools</div></a></li>
+    <li data-container="body" data-placement="right" data-toggle="tooltip" title="" data-original-title="Video on demand"><a href="https://intranet.alxswe.com/dashboards/videos"><div class="icon "><i aria-hidden="true" class="fa-solid fa-film "></i></div><div class="visible-xs">Video on demand</div></a></li>
+    
+
+      <hr title="My campus">
+
+      
+      <li data-container="body" data-placement="right" data-toggle="tooltip" title="" data-original-title="Peers"><a href="https://intranet.alxswe.com/users/peers"><div class="icon "><i aria-hidden="true" class="fa-solid fa-users "></i></div><div class="visible-xs">Peers</div></a></li>
+      
+
+
+<hr class="visible-xs">
+
+<li>
+      <div data-container="body" data-placement="right" data-toggle="tooltip" title="" data-original-title="Discord">
+        <a rel="noreferrer" target="_blank" href="https://discord.com/app">
+          <div class="icon discord">
+            <i aria-hidden="true" class="fa-brands fa-discord "></i>
+          </div>
+          <div class="visible-xs">Discord</div>
+</a>      </div>
+
+  <div data-container="body" data-placement="right" data-toggle="tooltip" title="" data-original-title="My Profile">
+    <a href="https://intranet.alxswe.com/users/my_profile">
+        <div class="image ">
+          <div class="inner" style="background-image: url(&#39;https://intranet.alxswe.com/rails/active_storage/representations/redirect/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBBejZIQnc9PSIsImV4cCI6bnVsbCwicHVyIjoiYmxvYl9pZCJ9fQ==--a63f82a3c734dcc79249b306e66e52d79e5130ee/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdCem9MWm05eWJXRjBTU0lJYW5CbkJqb0dSVlE2RW5KbGMybDZaVjkwYjE5bWFYUmJCMmtCeUdrQnlBPT0iLCJleHAiOm51bGwsInB1ciI6InZhcmlhdGlvbiJ9fQ==--596ca5c9d0091ccfe5374ad3fb3471cc1878f984/Img01941.jpg&#39;)"></div>
+        </div>
+
+      <div class="visible-xs">My Profile</div>
+</a>  </div>
+</li>
+
+
+    </ul>
+  </div>
+</nav>
+
+      <div class="hidden-xs navigation sidebar">
+  <a class="logo-container" href="https://intranet.alxswe.com/">
+    <div class="logo"></div>
+</a>
+  <ul>
+    <li data-container="body" data-placement="right" data-toggle="tooltip" title="" data-original-title="Home"><a href="https://intranet.alxswe.com/"><div class="icon "><i aria-hidden="true" class="fa-solid fa-home "></i></div><div class="visible-xs">Home</div></a></li>
+
+
+
+
+    <li data-container="body" data-placement="right" data-toggle="tooltip" title="" data-original-title="My Planning"><a href="https://intranet.alxswe.com/planning/me"><div class="icon "><i aria-hidden="true" class="fa-solid fa-calendar "></i></div><div class="visible-xs">My Planning</div></a></li>
+    <li data-container="body" data-placement="right" data-toggle="tooltip" id="sidebar-current-projects-item" title="" data-original-title="Projects"><a href="https://intranet.alxswe.com/projects/current"><div class="icon "><i aria-hidden="true" class="fa-solid fa-code-fork "></i></div><div class="visible-xs">Projects</div></a></li>
+    <li data-container="body" data-placement="right" data-toggle="tooltip" title="" data-original-title="QA Reviews I can make"><a href="https://intranet.alxswe.com/corrections/to_review"><div class="icon "><i aria-hidden="true" class="fa-solid fa-check "></i></div><div class="visible-xs">QA Reviews I can make</div></a></li>
+    
+    <li data-container="body" data-placement="right" data-toggle="tooltip" title="" data-original-title="Evaluation quizzes"><a href="https://intranet.alxswe.com/dashboards/my_current_evaluation_quizzes"><div class="icon "><i aria-hidden="true" class="fa-solid fa-question "></i></div><div class="visible-xs">Evaluation quizzes</div></a></li>
+
+    <hr title="My resources">
+
+    <li data-container="body" data-placement="right" data-toggle="tooltip" title="" data-original-title="Curriculums"><a href="https://intranet.alxswe.com/dashboards/my_curriculums"><div class="icon "><i aria-hidden="true" class="fa-solid fa-graduation-cap "></i></div><div class="visible-xs">Curriculums</div></a></li>
+    <li data-container="body" data-placement="right" data-toggle="tooltip" id="sidebar-concepts-item" title="" data-original-title="Concepts"><a href="https://intranet.alxswe.com/concepts"><div class="icon "><i aria-hidden="true" class="fa-solid fa-file-text "></i></div><div class="visible-xs">Concepts</div></a></li>
+    <li data-container="body" data-placement="right" data-toggle="tooltip" id="sidebar-dashboards-video-rooms" title="" data-original-title="Conference rooms"><a href="https://intranet.alxswe.com/dashboards/video_rooms"><div class="icon "><i aria-hidden="true" class="fa-solid fa-comments "></i></div><div class="visible-xs">Conference rooms</div></a></li>
+    <li data-container="body" data-placement="right" data-toggle="tooltip" title="" data-original-title="Servers"><a href="https://intranet.alxswe.com/servers"><div class="icon "><i aria-hidden="true" class="fa-solid fa-server "></i></div><div class="visible-xs">Servers</div></a></li>
+    <li data-container="body" data-placement="right" data-toggle="tooltip" id="sidebar-dashboards-my-containers" title="" data-original-title="Sandboxes"><a href="https://intranet.alxswe.com/user_containers/current"><div class="icon "><i aria-hidden="true" class="fa-solid fa-terminal "></i></div><div class="visible-xs">Sandboxes</div></a></li>
+    <li data-container="body" data-placement="right" data-toggle="tooltip" title="" data-original-title="Tools"><a href="https://intranet.alxswe.com/dashboards/my_tools"><div class="icon "><i aria-hidden="true" class="fa-solid fa-wrench "></i></div><div class="visible-xs">Tools</div></a></li>
+    <li data-container="body" data-placement="right" data-toggle="tooltip" title="" data-original-title="Video on demand"><a href="https://intranet.alxswe.com/dashboards/videos"><div class="icon "><i aria-hidden="true" class="fa-solid fa-film "></i></div><div class="visible-xs">Video on demand</div></a></li>
+    
+
+      <hr title="My campus">
+
+      
+      <li data-container="body" data-placement="right" data-toggle="tooltip" title="" data-original-title="Peers"><a href="https://intranet.alxswe.com/users/peers"><div class="icon "><i aria-hidden="true" class="fa-solid fa-users "></i></div><div class="visible-xs">Peers</div></a></li>
+      
+
+
+<hr class="visible-xs">
+
+<li>
+      <div data-container="body" data-placement="right" data-toggle="tooltip" title="" data-original-title="Discord">
+        <a rel="noreferrer" target="_blank" href="https://discord.com/app">
+          <div class="icon discord">
+            <i aria-hidden="true" class="fa-brands fa-discord "></i>
+          </div>
+          <div class="visible-xs">Discord</div>
+</a>      </div>
+
+  <div data-container="body" data-placement="right" data-toggle="tooltip" title="" data-original-title="My Profile">
+    <a href="https://intranet.alxswe.com/users/my_profile">
+        <div class="image ">
+          <div class="inner" style="background-image: url(&#39;https://intranet.alxswe.com/rails/active_storage/representations/redirect/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBBejZIQnc9PSIsImV4cCI6bnVsbCwicHVyIjoiYmxvYl9pZCJ9fQ==--a63f82a3c734dcc79249b306e66e52d79e5130ee/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdCem9MWm05eWJXRjBTU0lJYW5CbkJqb0dSVlE2RW5KbGMybDZaVjkwYjE5bWFYUmJCMmtCeUdrQnlBPT0iLCJleHAiOm51bGwsInB1ciI6InZhcmlhdGlvbiJ9fQ==--596ca5c9d0091ccfe5374ad3fb3471cc1878f984/Img01941.jpg&#39;)"></div>
+        </div>
+
+      <div class="visible-xs">My Profile</div>
+</a>  </div>
+</li>
+
+
+  </ul>
+</div>
+
+
+    <main>
+        
+
+        <div id="layout-bars">
+          
+          <div class="px-5 py-3" id="student-switch-curriculum">
+  <div class="dropdown d-flex flex-column gap-1">
+    <span class="fs-small text-muted">Curriculum</span>
+
+    <div aria-haspopup="true" aria-expanded="false" class="align-items-center d-flex gap-3" data-toggle="dropdown" id="student-switch-curriculum-dropdown" role="button">
+      <div class="d-flex flex-column" style="line-height: 16px">
+        <span class="fs-4 fw-600">
+          SE Foundations
+        </span>
+        <span class="fs-small text-muted">
+          Average: <span class="fw-500">49.1%</span>
+        </span>
+      </div>
+
+      <div class="d-flex flex-column justify-content-center">
+        <span style="margin-bottom: -4px">
+          <i aria-hidden="true" class="fa-solid fa-angle-up  fa-fw"></i>
+        </span>
+        <span style="margin-top: -4px">
+          <i aria-hidden="true" class="fa-solid fa-angle-down  fa-fw"></i>
+        </span>
+      </div>
+    </div>
+
+    <ul aria-labelledby="student-switch-curriculum-dropdown" class="dropdown-menu fs-5">
+        <li>
+          <a href="https://intranet.alxswe.com/curriculums/1/observe">
+            <div class="align-items-center d-flex py-2">
+              <div class="d-flex flex-column" style="line-height: 16px">
+                <span class="fs-4 fw-500">
+                  SE Foundations
+                </span>
+                <span class="text-muted">
+                  Average: <span class="fw-500">49.1%</span>
+                </span>
+              </div>
+
+                <span class="fw-600 text-info" style="margin-left: 42px">
+                  <i aria-hidden="true" class="fa-solid fa-check "></i>
+                </span>
+            </div>
+</a>        </li>
+    </ul>
+  </div>
+</div>
+
+          
+          
+          
+        </div>
+
+      <article class="">
+
+        
+  <div class="d-flex flex-wrap">
+
+    <div class="flex-grow-1" id="curriculum_navigation_content">
+      
+<h1 class="d-flex flex-column gap-2">
+  <span>[How to : ] Fresh Reset and Install mysql 5.7</span>
+</h1>
+
+<div>
+  
+</div>
+
+<div class="gap formatted-content">
+    <p>&nbsp;⚠️ <strong>Before going through the guide try this command if it gonna install MySQL 5.7 correctly, when you see the white windows you can jump to step 9, and see what to choose :</strong> </p>
+
+<pre><code> sudo wget -O mysql57 https://raw.githubusercontent.com/nuuxcode/alx-system_engineering-devops/master/scripts/mysql57 &amp;&amp; sudo chmod +x mysql57 &amp;&amp;  sudo ./mysql57
+</code></pre>
+
+<p>If this command did not install 5.7 correctly you can continue reading the following guide.</p>
+
+<p><strong>NOTE  AS YOU PROCEED: 
+At any point in this guide, don’t go to the next step if you have errors in the current step you are in, make sure there are no errors.</strong></p>
+
+<p>You can also use this guide for more visual and sample outputs : </p>
+
+<h5><a href="https://intranet.alxswe.com/rltoken/7Vopd7lb8_-GwkYXAzmWpg" title="For a comprehensive Guide Click Here 📄 " target="_blank">For a comprehensive Guide Click Here 📄 </a></h5>
+
+<h3>STEPS :</h3>
+
+<ol>
+<li><p><strong>Clean Running MySQL Processes :</strong></p>
+
+<ul>
+<li>Check for any running MYSQL Processes:
+<strong><code>sudo ps aux | grep mysql</code></strong></li>
+<li>If MySQL is running,try stopping it :
+<strong><code>sudo service mysql stop</code></strong></li>
+<li>Double-check if MySQL is no longer running:
+<strong><code>sudo ps aux | grep mysql</code></strong></li>
+<li>If MySQL processes are still running, terminate them, remember to replace PID with the value of your PID : 
+<strong><code>sudo kill -9 &lt;PID&gt;</code></strong><br></li>
+</ul></li>
+<li><p><strong>Remove Existing MySQL Versions:</strong></p>
+
+<ul>
+<li> Remove MySQL packages 
+<strong><code>sudo apt-get remove --purge mysql-server mysql-client mysql-common -y &amp;&amp; sudo apt-get autoremove -y</code></strong><br></li>
+<li> If no errors occurs, proceed to next steps </li>
+<li> If prompted by a dialog to remove data directories, please select <code>YES</code> and press Enter.</li>
+</ul></li>
+<li><p><strong>Remove MySQL Apt Configurations :</strong></p>
+
+<ul>
+<li> Running the following ::: </li>
+<li> <strong><code>sudo rm -rf /etc/apt/sources.list.d/mysql.list*</code></strong></li>
+<li> <strong><code>sudo rm -rf /var/lib/mysql-apt-config</code></strong></li>
+<li> <strong><code>sudo dpkg --purge mysql-apt-config</code></strong></li>
+</ul></li>
+<li><p><strong>Double Check and Remove Configuration File</strong></p>
+
+<ul>
+<li> Check by running : <strong><code>dpkg -l | grep mysql</code></strong></li>
+<li> The result from above should be none, on your terminal</li>
+<li> Now, Remove configurations files  by : <strong><code>sudo rm -rf /etc/mysql /var/lib/mysql</code></strong></li>
+</ul></li>
+<li><p><strong>Edit sources.list to Remove MySQL Repositories :</strong></p>
+
+<ul>
+<li> Check the sources.list file for <code>MySQL</code> repository entries (example: deb http://repo.mysql.com/apt/ubuntu bionic main), 
+there should be none like the picture below:</li>
+</ul></li>
+<li><p><strong>Update the packages :</strong></p>
+
+<ul>
+<li>  Check the sources.list file for <code>MySQL</code> repository entries (example: deb http://repo.mysql.com/apt/ubuntu bionic main),</li>
+<li>  Run :  <strong><code>cat /etc/apt/sources.list | grep mysql</code></strong></li>
+<li>   there should be none like the picture below:</li>
+<li>   If there are entries, open the sources.list file: <strong><code>sudo vi /etc/apt/sources.list</code></strong></li>
+<li>   If no errors occur, proceed to the next step.</li>
+<li>   Update the package by running :** <code>sudo apt update</code>**</li>
+<li>   Kill any running processses 
+<code>ps aux | grep apt</code></li>
+</ul></li>
+<li><p><strong>Clean APT Cache :</strong></p>
+
+<ul>
+<li>   Run : 
+<strong><code>sudo apt clean</code></strong></li>
+</ul></li>
+<li><p><strong>Configure any Pending Packages and Install MySQL :</strong></p>
+
+<ul>
+<li>   Run :<br>
+<code>sudo dpkg --configure -a</code></li>
+<li>   Install MySQL by running : 
+**  <code>sudo wget -O mysql57 https://raw.githubusercontent.com/nuuxcode/alx-system_engineering-devops/master/scripts/mysql57 &amp;&amp; sudo chmod +x mysql57 &amp;&amp;  sudo ./mysql57</code>**</li>
+<li>   A few windows are going to show up, Follow the prompts to select Ubuntu Bionic, change to MySQL 5.7 and set a password if needed.<br></li>
+<li>   After installation, check MySQL status:
+<strong><code>sudo service mysql status</code></strong>
+*</li>
+</ul></li>
+</ol>
+
+<h4>If issues persist, use the following commands to debug :</h4>
+
+<ul>
+<li><strong><code>journalctl -u mysql.service</code></strong></li>
+<li><strong><code>cat /var/log/mysql/error.log</code></strong></li>
+<li><strong><code>journalctl -xe</code></strong></li>
+</ul>
+
+<h4>Check this post o learn more about MySQL</h4>
+
+<p><strong><code>https://shazaali.substack.com/p/database-administration</code></strong></p>
+
+</div>
+
+
+
+      
+    </div>
+  </div>
+
+
+      </article>
+
+        <div class="copyright">Copyright © 2024 ALX, All rights reserved.</div>
+
+    </main>
+
+        <button class="btn btn-primary atop-help" id="search-button" data-search-active="false" data-toggle="modal" data-target="#search-modal">
+  <i aria-hidden="true" class="fa-solid fa-magnifying-glass "></i>
+  <i aria-hidden="true" class="fa-solid fa-window-minimize "></i>
+</button>
+
+        <div class="modal fade" id="search-modal" tabindex="-1" role="dialog" aria-labelledby="search-modal-label">
+    <div class="modal-dialog modal-md">
+        <div class="modal-content">
+            <div class="modal-header">
+                <div id="search-bar-container">
+    <input id="search-bar" autocomplete="off" type="text" name="hbtn-search-bar" placeholder="✨Start search by typing in this field✨">
+</div>
+
+            </div>
+            <div class="modal-body">
+                <div id="modal-spinner" class="spinner gap">
+                    <div class="bounce1"></div>
+                    <div class="bounce2"></div>
+                    <div class="bounce3"></div>
+                </div>
+                <div id="search-results-container">
+</div>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+        <div class="modal fade" id="markdownGuideModal" tabindex="-1" role="dialog" aria-labelledby="markdownGuideModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-md">
+    <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+          <h4 class="modal-title">Markdown Guide</h4>
+        </div>
+        <div class="modal-body">
+            <h4>Emphasis</h4>
+<pre>**<strong>bold</strong>**
+*<em>italics</em>*
+~~<strike>strikethrough</strike>~~</pre>
+<h4>Headers</h4>
+<pre># Big header
+## Medium header
+### Small header
+#### Tiny header</pre>
+<h4>Lists</h4>
+<pre>* Generic list item
+* Generic list item
+* Generic list item
+
+1. Numbered list item
+2. Numbered list item
+3. Numbered list item</pre>
+<h4>Links</h4>
+<pre>[Text to display](http://www.example.com)</pre>
+<h4>Quotes</h4>
+<pre>&gt; This is a quote.
+&gt; It can span multiple lines!</pre>
+<h4>Images</h4>
+<p>CSS style available: <code>width, height, opacity</code></p>
+<pre>![](http://www.example.com/image.jpg)
+![](http://www.example.com/image.jpg | width: 200px)
+![](http://www.example.com/image.jpg | height: 124px | width: 80px | opacity: 0.6)
+</pre>
+<h4>Tables</h4>
+<pre>| Column 1 | Column 2 | Column 3 |
+| -------- | -------- | -------- |
+| John     | Doe      | Male     |
+| Mary     | Smith    | Female   |
+
+<em>Or without aligning the columns...</em>
+
+| Column 1 | Column 2 | Column 3 |
+| -------- | -------- | -------- |
+| John | Doe | Male |
+| Mary | Smith | Female |
+</pre>
+<h4>Displaying code</h4>
+<pre>`var example = "hello!";`
+
+<em>Or spanning multiple lines...</em>
+
+```
+var example = "hello!";
+alert(example);
+```</pre>
+        </div>
+    </div>
+  </div>
+</div>
+
+
+        <script id="cody-snippet">
+          window.codySettings = { widget_id: "9993bc72-2258-452b-a4bf-b2fe1ad5e0d7" };
+          !function(){var t=window,e=document,a=function(){var t=e.createElement("script");t.type="text/javascript",t.async=!0,t.src="https://trinketsofcody.com/cody-widget.js";var a=e.getElementsByTagName("script")[0];a.parentNode.insertBefore(t,a)};"complete"===document.readyState?a():t.attachEvent?t.attachEvent("onload",a):t.addEventListener("load",a,!1)}();
+        </script>
+  
+
+<div id="cody-wrapper"><style>
+  #cody-wrapper .cody-launcher {
+    position: var(--position) !important;
+    left: var(--left) !important;
+    right: var(--right) !important;
+    bottom: var(--launcher-bottom) !important;
+    border-radius: 9999px !important;
+    border: 0 !important;
+    padding: 0 !important;
+    box-sizing: border-box !important;
+    z-index: 999999 !important;
+    overflow: hidden !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    transition: box-shadow, scale 300ms linear !important;
+    animation: cody-launcher-pulse 4s infinite !important;
+    background-color: var(--background-color) !important;
+    color: var(--text-color) !important;
+    cursor: pointer !important;
+    --icon-margin: 12px;
+    --close-icon-margin: 16px;
+  }
+
+    #cody-wrapper {
+    --position: fixed;
+    --left: unset;
+    --right: 20px;
+    --launcher-bottom: 20px;
+    --frame-bottom: 90px;
+    --background-color: #FBD647;
+    --text-color: #020617;
+    --shadow-color: 251, 214, 71;
+  }
+
+  @media screen and (max-width: 512px) {
+    #cody-wrapper {
+      --left: unset;
+      --right: 10px;
+    }
+  }
+
+  
+  #cody-wrapper .cody-launcher:hover {
+    scale: 1.1 !important;
+  }
+
+  #cody-wrapper .cody-launcher .cody-close-icon {
+    display: none !important;
+  }
+
+  #cody-wrapper[data-launcher-open] .cody-launcher .cody-icon {
+    display: none !important;;
+  }
+
+  #cody-wrapper[data-launcher-open] .cody-launcher .cody-close-icon {
+    display: block !important;;
+  }
+
+  #cody-wrapper .cody-iframe {
+    z-index: 99999 !important;
+    transition: visibility .5s, opacity .5s linear !important;
+    background-color: #fff !important;
+    position: fixed !important;
+    left: var(--left) !important;
+    right: var(--right) !important;
+    bottom: var(--frame-bottom) !important;
+    height: 75vh !important;
+    width: 448px !important;
+    border-radius: 10px !important;
+    overflow: hidden !important;
+    box-shadow: 0 2px 4px rgba(0, 18, 26, .08), 0 3px 12px rgba(0, 18, 26, .16), 0 2px 14px 0 rgba(0, 18, 26, .2) !important;
+    border: 0 !important;
+    display: none !important;
+  }
+
+  @media screen and (max-height: 667px) {
+    #cody-wrapper .cody-iframe {
+      height: calc(100vh - 110px) !important;
+    }
+  }
+
+  @media screen and (max-width: 448px) {
+    #cody-wrapper .cody-iframe {
+      width: calc(100vw - 20px) !important;
+    }
+  }
+
+  #cody-wrapper[data-launcher-open] .cody-iframe {
+    display: block !important;
+  }
+
+  @keyframes cody-launcher-pulse {
+    0%, 100% {
+      box-shadow: 0 0 18px 4px rgba(var(--shadow-color), 0.8);
+    }
+    50% {
+      box-shadow: 0 0 12px 3px rgba(var(--shadow-color), 0.4);
+    }
+  }
+</style>
+
+<button class="cody-launcher" style="width: 56px; height: 56px; font-size: 16px;">
+    <svg class="cody-icon" style="aspect-ratio: 1 / 1; width: 100%; height: 100%; margin: var(--icon-margin)" aria-hidden="true" viewBox="5 7 45 45" xml:space="preserve" xmlns="http://www.w3.org/2000/svg">
+    <path d="M41.18 17.86a52.75 52.75 0 0 0-19 0c-.54.1-7.9 2.7-7.9 2.7h.01c-2.9 1.01-4.91 3.75-4.91 6.9v4.85c0 2.96 1.78 5.56 4.4 6.7l17.91 8.93v-6.67c3.18 0 6.36-.29 9.5-.86 4.13-.76 7.13-4.36 7.13-8.56v-5.44c-.01-4.19-3.01-7.79-7.14-8.55zm3.47 14c0 2.43-1.74 4.52-4.13 4.95-2.91.53-5.88.8-8.84.8s-5.93-.27-8.84-.8c-2.39-.44-4.13-2.52-4.13-4.95v-5.44c0-2.43 1.74-4.52 4.13-4.95 2.91-.53 5.88-.8 8.84-.8s5.93.27 8.84.8c2.39.44 4.13 2.52 4.13 4.95v5.44z" fill="currentColor"></path>
+    <path d="M26.17 32.79c-.84 0-1.53-.68-1.53-1.53v-4.24c0-.84.68-1.53 1.53-1.53s1.53.68 1.53 1.53v4.24c-.01.85-.69 1.53-1.53 1.53zM37.17 32.79c-.84 0-1.53-.68-1.53-1.53v-4.24c0-.84.68-1.53 1.53-1.53s1.53.68 1.53 1.53v4.24c0 .85-.68 1.53-1.53 1.53z" fill="currentColor"></path>
+</svg>    <svg style="aspect-ratio: 1/1; width: 100%; height: 100%; margin: var(--close-icon-margin);" class="cody-close-icon" launchercloseicon="chevron-down" aria-hidden="true" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
+    <path d="M239 401c9.4 9.4 24.6 9.4 33.9 0L465 209c9.4-9.4 9.4-24.6 0-33.9s-24.6-9.4-33.9 0l-175 175L81 175c-9.4-9.4-24.6-9.4-33.9 0s-9.4 24.6 0 33.9L239 401z" fill="currentColor"></path>
+</svg></button></div></body></html>
