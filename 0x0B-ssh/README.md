@@ -34,3 +34,14 @@ scp file user@host:/path # copies files securly to server
 nslookup domainName // returns ipadress 
 
 -v to run in debug mode
+
+
+CHANGE MASTER TO MASTER_HOST='54.235.165.150', MASTER_USER='copy', MASTER_PASSWORD='iamcopy', MASTER_LOG_FILE='mysql-bin.000001', MASTER_LOG_POS=994;
+
+
+
+
+
+525718-web-01	ubuntu	54.235.165.150	running	
+525718-web-02	ubuntu	52.3.253.2	running	
+525718-lb-01	ubuntu	54.89.20.252
