@@ -1,12 +1,12 @@
 #!/usr/bin/python3
-"""Reddit API word counter"""
+"""word counter container"""
 
 import requests
 
 
 def count_words(subreddit, words_list, next_page="", counts=[]):
     """Counts occurrences of words in the titles of hot posts in a subreddit."""
-    
+
     # Initialize the counts list on the first call
     if next_page == "":
         counts = [0] * len(words_list)
@@ -58,3 +58,13 @@ def count_words(subreddit, words_list, next_page="", counts=[]):
 
 # Example usage
 # count_words("programming", ["python", "java", "javascript"])
+
+
+if __name__ == '__main__':
+    import sys
+    if len(sys.argv) < 3:
+        print("Usage: {} <subreddit> <list of keywords>".format(sys.argv[0]))
+        print("Ex: {} programming 'python java javascript'".format(
+            sys.argv[0]))
+    else:
+        result = count_words(sys.argv[1], [x for x in sys.argv[2].split()])
