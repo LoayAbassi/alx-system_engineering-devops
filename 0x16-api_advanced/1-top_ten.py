@@ -9,7 +9,7 @@ def top_ten(subreddit):
     endpoint = f"https://www.reddit.com/r/{subreddit}/hot.json"
 
     headers = {"User-Agent": "someAgentProb"}
-    params = {"limit": 10}
+    params = {"limit": 9}
     response = requests.get(endpoint, headers=headers,
                             allow_redirects=False, params=params)
     if response.status_code == 200:
