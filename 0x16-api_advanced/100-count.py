@@ -4,12 +4,13 @@
 import requests
 
 
-def count_words(subreddit, words_list, next_page="", counts=[]):
-    """Counts occurrences of words in the titles of hot posts in a subreddit."""
+def count_words(subreddit, words_list, next_page="", count=[]):
+    """count occurrences of words in the
+    titles of hot posts in a subreddit."""
 
-    # Initialize the counts list on the first call
+    # Initialize the count list on the first call
     if next_page == "":
-        counts = [0] * len(words_list)
+        count = [0] * len(words_list)
 
     # Construct the API URL
     url = "https://www.reddit.com/r/{}/hot.json".format(subreddit)
@@ -26,35 +27,35 @@ def count_words(subreddit, words_list, next_page="", counts=[]):
             for word in post['data']['title'].split():
                 for i in range(len(words_list)):
                     if words_list[i].lower() == word.lower():
-                        counts[i] += 1
+                        count[i] += 1
 
         # Update the next_page variable with the 'after' value for pagination
         next_page = data['data']['after']
         if next_page is None:
             skip_indices = []
-            # Combine counts for duplicate words and sort results
+            # Combine count for duplicate words and sort results
             for i in range(len(words_list)):
                 for j in range(i + 1, len(words_list)):
                     if words_list[i].lower() == words_list[j].lower():
                         skip_indices.append(j)
-                        counts[i] += counts[j]
+                        count[i] += count[j]
 
-            # Sort words by count and alphabetically if counts are equal
+            # Sort words by count and alphabetically if count are equal
             for i in range(len(words_list)):
                 for j in range(i, len(words_list)):
-                    if (counts[j] > counts[i] or
+                    if (count[j] > count[i] or
                             (words_list[i] > words_list[j] and
-                             counts[j] == counts[i])):
-                        counts[i], counts[j] = counts[j], counts[i]
+                             count[j] == count[i])):
+                        count[i], count[j] = count[j], count[i]
                         words_list[i], words_list[j] = words_list[j], words_list[i]
 
             # Print the results, excluding duplicates
             for i in range(len(words_list)):
-                if counts[i] > 0 and i not in skip_indices:
-                    print("{}: {}".format(words_list[i].lower(), counts[i]))
+                if count[i] > 0 and i not in skip_indices:
+                    print("{}: {}".format(words_list[i].lower(), count[i]))
         else:
             # Recursive call to process the next page of data
-            count_words(subreddit, words_list, next_page, counts)
+            count_words(subreddit, words_list, next_page, count)
 
 # Example usage
 # count_words("programming", ["python", "java", "javascript"])
